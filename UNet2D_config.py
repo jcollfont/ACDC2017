@@ -61,7 +61,7 @@ val_plot_segmentation = False
 val_min_size = [0, INPUT_PATCH_SIZE[0], INPUT_PATCH_SIZE[1]]
 
 # 4d predictions
-dataset_root_raw = "/Volumes/Data/external_data/ACDC2017_segmentationChallenge/training/"
+dataset_root_raw = "/Volumes/Data/external_data/ACDC2017_segmentationChallenge/training_proc/"
 target_spacing = (None, 1.25, 1.25)
 min_size = val_min_size
 
