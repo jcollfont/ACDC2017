@@ -116,7 +116,7 @@ def process_patient(args):
     if os.path.isfile(fname):
         images["es_seg"] = sitk.ReadImage(fname)
 
-    print id, images["es_seg"].GetSpacing()
+    print( id, images["es_seg"].GetSpacing())
 
     for k in images.keys():
         #print k
@@ -126,12 +126,12 @@ def process_patient(args):
     img_as_list = []
     for k in ['ed', 'ed_seg', 'es', 'es_seg']:
         if k not in images.keys():
-            print id, "has missing key:", k
+            print( id, "has missing key:", k)
         img_as_list.append(images[k][None])
     try:
         all_img = np.vstack(img_as_list)
     except:
-        print id, "has a problem with spacings"
+        print( id, "has a problem with spacings")
     np.save(os.path.join(folder_out, "pat_%03.0d" % id), all_img.astype(np.float32))
 
 
@@ -141,7 +141,7 @@ def generate_patient_info(folder):
     for id in range(151):
         fldr = os.path.join(folder, 'patient%03.0d'%id)
         if not os.path.isdir(fldr):
-            print "could not find dir of patient ", id
+            print( "could not find dir of patient ", id)
             continue
         nfo = np.loadtxt(os.path.join(fldr, "Info.cfg"), dtype=str, delimiter=': ')
         patient_info[id] = {}
