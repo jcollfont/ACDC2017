@@ -61,11 +61,11 @@ val_plot_segmentation = False
 val_min_size = [0, INPUT_PATCH_SIZE[0], INPUT_PATCH_SIZE[1]]
 
 # 4d predictions
-dataset_root_raw = "/Volumes/Data/external_data/ACDC2017_segmentationChallenge/training_proc/"
+dataset_root_raw = "~/space/data/ACDC2017_segmentationChallenge/training_proc/"
 target_spacing = (None, 1.25, 1.25)
 min_size = val_min_size
 
-dataset_root_test = "/Volumes/Data/external_data/ACDC2017_segmentationChallenge/testing/testing/"
+dataset_root_test = "~/space/data/ACDC2017_segmentationChallenge/testing/testing/"
 test_out_folder = os.path.join(results_dir, "test_predictions")
 if not os.path.isdir(test_out_folder):
     os.mkdir(test_out_folder)
